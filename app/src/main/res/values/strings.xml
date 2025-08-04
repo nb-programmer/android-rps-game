@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RPS</string>
+    <string name="title_startbtn_text">START</string>
+    <string name="title_settbtn_text">SETTINGS</string>
+    <string name="title_quitbtn_text">QUIT</string>
+    <string name="title_yesbtn_text">YES</string>
+    <string name="title_nobtn_text">NO</string>
+    <string name="title_quit_cfm_text">Really quit?</string>
+</resources>
