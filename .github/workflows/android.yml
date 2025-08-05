@@ -2,7 +2,8 @@ name: Android CI
 
 on:
   push:
-    tags: [ "*" ]
+    branches:
+      - master
 
 jobs:
   build:
@@ -20,10 +21,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleDebug
 
-    - name: Publish APK
-      uses: alsrb968/action-release-apk@master
+    - name: Releasing using Hub
+      uses: ShaunLWM/action-release-debugapk@master
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        APP_FOLDER: app
+       GITHUB_TOKEN: ${{ secrets.TOKEN }}
+       APP_FOLDER: app
+       RELEASE_TITLE: New Build
